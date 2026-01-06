@@ -1,137 +1,151 @@
-# Zabbix Installation Guide (Beginner Friendly)
+# Zabbix Installation Steps
 
-This document explains **how to install Zabbix step by step** on an Ubuntu server.
-It is written for **absolute beginners**.
-
-If you can copy and paste commands, you can complete this installation.
+This document explains how Zabbix was installed on the Azure VM.
 
 ---
 
-## 1️⃣ Prerequisites (Before You Start)
+## Step 1: Update the System
 
-Before starting, make sure you have:
-
-- Ubuntu Server (20.04 / 22.04)
-- Sudo or root access
-- Internet connection
-- A public IP (Azure VM or any cloud VM)
-
-Check internet connectivity:
-
-ping -c 3 google.com
-If you get replies, internet is working ✅
-
-2️⃣ Step 1: Update the Server
-Why?
-Updating ensures the system is secure and avoids package issues.
-
-Command:
-
+```bash
 sudo apt update && sudo apt upgrade -y
-Wait until it finishes.
+Step 2: Install Zabbix Repository
+bash
+Copy code
+wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb
+sudo dpkg -i zabbix-release_6.0-4+ubuntu22.04_all.deb
+sudo apt update
+Step 3: Install Zabbix Server, Agent & Frontend
+bash
+Copy code
+sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-agent -y
+Step 4: Install MySQL
+bash
+Copy code
+sudo apt install mysql-server -y
+sudo mysql_secure_installation
+yaml
+Copy code
 
-3️⃣ Step 2: Install Nginx and PHP
-Why?
-Nginx serves the Zabbix web interface
+---
 
-PHP runs the Zabbix UI
+## 4️⃣ `documentation/configuration-details.md`
 
-Command:
+```md
+# Configuration Details
 
-sudo apt install -y nginx php-fpm php-mysql php-gd php-xml php-bcmath php-mbstring
-Check if Nginx is running:
+This document contains important configuration settings used in this project.
 
+---
 
-systemctl status nginx
-You should see:
+## Zabbix Server Configuration
 
+File:
+/etc/zabbix/zabbix_server.conf
 
-Active: active (running)
-Press q to exit.
+go
+Copy code
 
-4️⃣ Step 3: Install Zabbix Packages
-What this installs:
-Zabbix Server
+Key setting:
+```ini
+DBPassword=StrongPassword
+PHP Configuration for Zabbix
+File:
 
-Zabbix Web Frontend
+bash
+Copy code
+/etc/zabbix/nginx.conf
+Timezone setting:
 
-Zabbix Agent
+ini
+Copy code
+php_value[date.timezone] = Asia/Dhaka
+yaml
+Copy code
 
-Nginx configuration for Zabbix
+---
 
-Command:
+## 5️⃣ `documentation/troubleshooting.md`
 
-sudo apt install -y zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-agent
-Let the installation complete without interruption.
+```md
+# Troubleshooting Guide
 
-5️⃣ Step 4: Start and Enable Required Services
-Why?
-Start services now
+Common issues faced during setup and their solutions.
 
-Automatically start after reboot
+---
 
-Command:
+## Zabbix Web UI Not Loading
 
-sudo systemctl enable --now nginx
-sudo systemctl enable --now zabbix-server
-sudo systemctl enable --now zabbix-agent
-sudo systemctl enable --now php8.4-fpm
-Check service status (optional):
+- Check Nginx status:
+```bash
+sudo systemctl status nginx
+Ensure port 80 is open in Azure NSG
 
+Zabbix Server Not Running
+Check service status:
 
-systemctl status zabbix-server
-systemctl status php8.4-fpm
-6️⃣ Step 5: Open Zabbix Web Interface
-Important:
-Make sure port 80 (HTTP) is allowed in:
+bash
+Copy code
+sudo systemctl status zabbix-server
+Verify database password in config file
 
-Firewall
+PHP Warnings in UI
+Confirm correct PHP timezone
 
-Azure Network Security Group (NSG)
+Restart services after configuration changes
 
-Open browser and visit:
+yaml
+Copy code
 
-http://<YOUR_SERVER_PUBLIC_IP>/zabbix
-Example:
+---
 
+## 6️⃣ `documentation/commands-used.md`
 
-http://20.xxx.xxx.xxx/zabbix
-7️⃣ Step 6: Zabbix Web Setup Wizard
-Follow the on-screen wizard:
+```md
+# Commands Used
 
-Welcome page → Click Next
+This document lists all important commands used during the project.
 
-Check of pre-requisites → All should be OK
+---
 
-Database configuration → Use default values
+## System Update
 
-Zabbix server details → Click Next
+```bash
+sudo apt update
+sudo apt upgrade -y
+Zabbix Installation
+bash
+Copy code
+sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-agent -y
+Service Management
+bash
+Copy code
+sudo systemctl restart zabbix-server zabbix-agent nginx mysql
+sudo systemctl enable zabbix-server zabbix-agent nginx mysql
+yaml
+Copy code
 
-Summary → Click Finish
+---
 
-8️⃣ Step 7: Login to Zabbix
-After setup, login using:
+## 7️⃣ `documentation/learning-summary.md`
 
+```md
+# Learning Summary
 
-Username: Admin
-Password: zabbix
-⚠️ Change password later for security.
+This document summarizes what was learned from this project.
 
-✅ Installation Completed Successfully
-If you can see:
+---
 
-Zabbix dashboard
+## Key Learnings
 
-No installation error
+- Azure VM provisioning and networking
+- Linux system administration basics
+- Zabbix server and agent architecture
+- Monitoring concepts (items, triggers, dashboards)
+- Writing professional technical documentation
 
-Menu on the left side
+---
 
-Then Zabbix is installed correctly 🎉
+## Outcome
 
-📌 Next Step
-
-After installation:
-
-Fix PHP deprecated warning (see troubleshooting.md)
-
-Add first monitored host
+This project strengthened both **technical skills** and **documentation skills**,
+making it suitable for portfolio and interview discussion.

@@ -101,6 +101,11 @@ sudo apt update && sudo apt upgrade -y
 
 ---
 
+
+---
+
+### ✅ Step 3: Install Zabbix Repository
+```md
 ## 🚀 Step 3: Install Zabbix Repository
 
 ```bash
@@ -108,10 +113,14 @@ wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix
 sudo dpkg -i zabbix-release_6.0-4+ubuntu22.04_all.deb
 sudo apt update
 
+
+
 ---
 
-### 🚀 Step 4: Install Zabbix Server, Agent & Frontend
+### ✅ Step 4: Install Zabbix Server, Agent & Frontend
 ```md
+## 🚀 Step 4: Install Zabbix Server, Agent & Frontend
+
 ```bash
 sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-agent -y
 

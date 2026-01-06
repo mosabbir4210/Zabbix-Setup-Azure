@@ -245,17 +245,21 @@ By completing this project, you will gain:
 - Skills in creating **production-style technical documentation**
 
 
-🔮 Future Improvements
-Email / Telegram alerting
+## 🔮 Future Improvements
 
-SNMP monitoring (routers, switches)
+In future iterations, this project can be extended with:
 
-Grafana integration
+- Alert notifications via Email and Telegram
+- SNMP-based monitoring for routers and switches
+- Grafana integration for advanced dashboards
+- Scalable multi-host and multi-environment monitoring
 
-Multiple host environments
 
 
-👤 Author
-Mosabbir Mridu
-System & Network Engineer
-GitHub: https://github.com/mosabbir4210
+## 👤 Author
+
+**Mosabbir Mridu**  
+System & Network Engineer  
+
+🔗 GitHub: https://github.com/mosabbir4210
+

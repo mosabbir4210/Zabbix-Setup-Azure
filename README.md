@@ -80,7 +80,8 @@ Zabbix-Setup-Azure/
 
 ---
 
-## 🚀 Step 1: Prepare the Azure Virtual Machine
+## ✅ Step 1: Prepare Azure Virtual Machine
+
 
 1. Login to **Azure Portal**
 2. Create a **Linux VM (Ubuntu)**
@@ -92,7 +93,8 @@ Zabbix-Setup-Azure/
 
 ---
 
-## 🚀 Step 2: Update the System
+## ✅ Step 2: Update the System
+
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -125,7 +127,8 @@ sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-agent -y
 
 ---
 
-### 🚀 Step 5: Install and Configure MySQL
+## ✅ Step 5: Install and Configure MySQL
+
 ```md
 
 sudo apt install mysql-server -y
@@ -143,13 +146,15 @@ FLUSH PRIVILEGES;
 EXIT;
 ```
 
-🚀 Step 6: Import Initial Zabbix Schema
+## ✅ Step 6: Import Initial Zabbix Database Schema
+
 ```md
 zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
 
 ```
 
-### 🚀 Step 7: Configure Zabbix Server
+## ✅ Step 7: Configure Zabbix Server
+
 ```md
 ```bash
 sudo nano /etc/zabbix/zabbix_server.conf
@@ -165,7 +170,8 @@ Save and exit.
 
 ---
 
-### 🚀 Step 8: Configure PHP for Zabbix
+## ✅ Step 8: Configure PHP for Zabbix
+
 ```md
 ```bash
 sudo nano /etc/zabbix/nginx.conf
@@ -182,13 +188,15 @@ Set correct timezone:
 php_value[date.timezone] = Asia/Dhaka
 ```
 
-🚀 Step 9: Start and Enable Services
+## ✅ Step 9: Start and Enable Services
+
 ```md
 sudo systemctl restart zabbix-server zabbix-agent nginx mysql
 sudo systemctl enable zabbix-server zabbix-agent nginx mysql
 
 ```
-🚀 Step 10: Access Zabbix Web Interface
+## ✅ Step 10: Access Zabbix Web Interface
+
 Open browser:
 
 

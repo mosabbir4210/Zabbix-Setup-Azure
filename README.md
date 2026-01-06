@@ -1,6 +1,6 @@
 # Zabbix Monitoring Setup on Azure (Beginner Friendly)
 
-# Zabbix Setup on Azure – Complete Step-by-Step Guide
+# Zabbix Setup  – Complete Step-by-Step Guide
 
 This repository provides a **complete, beginner-friendly guide** to deploying and configuring
 **Zabbix Monitoring System on Microsoft Azure** using a Linux virtual machine.
@@ -161,8 +161,7 @@ sudo nano /etc/zabbix/zabbix_server.conf
 
 ```
 
-Update:
-
+Update the database password:
 
 DBPassword=StrongPassword
 Save and exit.
@@ -184,8 +183,12 @@ php_value[date.timezone] = Asia/Dhaka
 
 Set correct timezone:
 
-
 php_value[date.timezone] = Asia/Dhaka
+
+
+For common issues and fixes, see:
+- documentation/troubleshooting.md
+
 ```
 
 ## ✅ Step 9: Start and Enable Services
@@ -253,7 +256,14 @@ In future iterations, this project can be extended with:
 - SNMP-based monitoring for routers and switches
 - Grafana integration for advanced dashboards
 - Scalable multi-host and multi-environment monitoring
+  
+📎 Additional Documentation
 
+For environment details and troubleshooting, see:
+
+documentation/azure-notes.md
+
+documentation/troubleshooting.md
 
 
 ## 👤 Author

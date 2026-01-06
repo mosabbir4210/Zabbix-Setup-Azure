@@ -218,36 +218,32 @@ Finish setup
 
 
 
-🧪 Step 11: Add a Host for Monitoring
+## 🧪 Step 11: Add a Host for Monitoring
+
 Login to Zabbix Web UI
 
-Go to Configuration → Hosts
+1. Go to **Configuration → Hosts**
+2. Click **Create host**
+3. Add:
+   - Hostname
+   - IP Address
+   - Template: *Linux by Zabbix Agent*
+4. Click **Save**
 
-Click Create host
-
-Add:
-
-Hostname
-
-IP Address
-
-Link Template: Linux by Zabbix Agent
-
-Save
 
 ### Host Monitoring
 ![Host Monitoring](screenshots/hosts.png)
 
-📘 Learning Outcomes
-Hands-on Azure VM configuration
+## 📘 Learning Outcomes
 
-Real-world monitoring implementation
+By completing this project, you will gain:
 
-Zabbix server & agent working knowledge
+- Hands-on experience with **Azure Virtual Machine configuration**
+- Practical understanding of **real-world monitoring implementation**
+- Strong working knowledge of **Zabbix Server and Zabbix Agent**
+- Experience with **database-backed monitoring systems**
+- Skills in creating **production-style technical documentation**
 
-Database-backed monitoring system
-
-Production-style documentation skills
 
 🔮 Future Improvements
 Email / Telegram alerting

@@ -101,7 +101,9 @@ sudo apt update && sudo apt upgrade -y
 
 ---
 
-🚀 Step 3: Install Zabbix Repository
+## 🚀 Step 3: Install Zabbix Repository
+
+```bash
 wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb
 sudo dpkg -i zabbix-release_6.0-4+ubuntu22.04_all.deb
 sudo apt update

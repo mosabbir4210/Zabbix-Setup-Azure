@@ -210,7 +210,7 @@ DB password: StrongPassword
 Finish setup
 
 📸 Screenshots
-Zabbix Dashboard
+dashboard.png
 
 Host Monitoring
 

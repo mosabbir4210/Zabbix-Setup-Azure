@@ -197,7 +197,13 @@ For common issues and fixes, see:
 sudo systemctl restart zabbix-server zabbix-agent nginx mysql
 sudo systemctl enable zabbix-server zabbix-agent nginx mysql
 
+
 ```
+
+### Server Environment (Azure VM)
+![Ubuntu Server](screenshots/ubuntu-server.png)
+
+
 ## ✅ Step 10: Access Zabbix Web Interface
 
 Open browser:

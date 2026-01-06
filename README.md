@@ -144,10 +144,10 @@ EXIT;
 ```
 
 🚀 Step 6: Import Initial Zabbix Schema
-
+```md
 zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
 
----
+```
 
 ### 🚀 Step 7: Configure Zabbix Server
 ```md

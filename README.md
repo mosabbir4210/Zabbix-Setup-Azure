@@ -1,6 +1,6 @@
 # Zabbix Monitoring Setup on Azure (Beginner Friendly)
 
-# Zabbix Setup  – Complete Step-by-Step Guide
+# Complete Step-by-Step Guide
 
 This repository provides a **complete, beginner-friendly guide** to deploying and configuring
 **Zabbix Monitoring System on Microsoft Azure** using a Linux virtual machine.

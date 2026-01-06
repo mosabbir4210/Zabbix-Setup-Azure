@@ -209,10 +209,14 @@ DB password: StrongPassword
 
 Finish setup
 
-📸 Screenshots
-dashboard.png
+## 📸 Screenshots
 
-Host Monitoring
+### Zabbix Dashboard
+![Zabbix Dashboard](screenshots/dashboard.png)
+
+---
+
+
 
 🧪 Step 11: Add a Host for Monitoring
 Login to Zabbix Web UI
@@ -230,6 +234,9 @@ IP Address
 Link Template: Linux by Zabbix Agent
 
 Save
+
+### Host Monitoring
+![Host Monitoring](screenshots/hosts.png)
 
 📘 Learning Outcomes
 Hands-on Azure VM configuration

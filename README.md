@@ -105,7 +105,6 @@ sudo apt update && sudo apt upgrade -y
 ---
 
 ### ✅ Step 3: Install Zabbix Repository
-## 🚀 Step 3: Install Zabbix Repository
 
 ```bash
 wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-4+ubuntu22.04_all.deb
@@ -119,7 +118,6 @@ sudo apt update
 
 ### ✅ Step 4: Install Zabbix Server, Agent & Frontend
 ```md
-🚀 Step 4: Install Zabbix Server, Agent & Frontend
 
 sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-agent -y
 
@@ -129,10 +127,11 @@ sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-agent -y
 
 ### 🚀 Step 5: Install and Configure MySQL
 ```md
-```bash
+
 sudo apt install mysql-server -y
 sudo mysql_secure_installation
 
+```
 
 #### Create Database and User
 ```md
@@ -142,6 +141,7 @@ CREATE USER 'zabbix'@'localhost' IDENTIFIED BY 'StrongPassword';
 GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix'@'localhost';
 FLUSH PRIVILEGES;
 EXIT;
+```
 
 🚀 Step 6: Import Initial Zabbix Schema
 
@@ -153,6 +153,8 @@ zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbi
 ```md
 ```bash
 sudo nano /etc/zabbix/zabbix_server.conf
+
+```
 
 Update:
 
@@ -168,6 +170,8 @@ Save and exit.
 ```bash
 sudo nano /etc/zabbix/nginx.conf
 
+```
+
 ```md
 ```ini
 php_value[date.timezone] = Asia/Dhaka
@@ -176,10 +180,14 @@ Set correct timezone:
 
 
 php_value[date.timezone] = Asia/Dhaka
-🚀 Step 9: Start and Enable Services
+```
 
+🚀 Step 9: Start and Enable Services
+```md
 sudo systemctl restart zabbix-server zabbix-agent nginx mysql
 sudo systemctl enable zabbix-server zabbix-agent nginx mysql
+
+```
 🚀 Step 10: Access Zabbix Web Interface
 Open browser:
 
